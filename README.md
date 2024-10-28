@@ -10,3 +10,4 @@ In this final repository I will go through the steps of each lab we did in BIO31
   7. Lab06
   8. Lab07
   9. Lab08  
+##Introduction
