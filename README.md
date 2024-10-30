@@ -1,7 +1,7 @@
 # Tutorial for evolutionary gene history analysis of STT3B in BIO312 
   ### Contents  
   1. [Introduction](#1-introduction)
-  2. [Lab3](#2-lab3) Lab3: Finding homologs with BLAST KEY
+  2. [Lab3](#2-lab3)
   4. Lab04 
   5. Lab05
   6. Lab06
