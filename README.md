@@ -1,7 +1,7 @@
 # Tutorial for evolutionary gene history analysis of STT3B in BIO312 
   ### Contents  
   1. [Introduction](#1-introduction)
-  2. [Lab 01] (#2-Lab01)
+  2. [Lab 01](#2-Lab01)
   4. Lab02
   5. Lab03
   6. Lab04
