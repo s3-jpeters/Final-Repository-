@@ -39,7 +39,7 @@ mkdir ~/lab03-$MYGIT/STT3B
 ```
 Check you are in the write directory
 
-##Download the query protein
+## Download the query protein
 
 
 
