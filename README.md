@@ -30,6 +30,28 @@ pwd
 ```
 # 2. Lab03:  Finding homologs with BLAST KEY
 
+## Create the BLAST database 
+
+first go to the lab 3 directory 
+
+```
+cd ~/lab03-$MYGIT
+```
+Next in order to uncompress the proteomes. Run the following command:
+
+```
+gunzip proteomes/*.gz
+```
+In order to put all the protein sequences into a single file use the cat command
+
+```
+cat  proteomes/*.faa > allprotein.fas
+```
+Make the BLAST database using this command: 
+
+```
+makeblastdb -in allprotein.fas -dbtype prot
+```
 To organize the BLAST searches, we will first create a directory for the STT3B search and navigate into it:
 
 We first created a folder for the STT3B BLAST search using mkdir command 
@@ -40,6 +62,11 @@ mkdir ~/lab03-$MYGIT/STT3B
 Check you are in the write directory
 
 ## Download the query protein
+
+```
+
+
+NP_849193.1
 
 
 
