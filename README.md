@@ -31,7 +31,7 @@ pwd
 ```
 # 2. BLAST
 
-##Lab03:  Finding homologs with BLAST KEY
+## Lab03:  Finding homologs with BLAST KEY
 
 ## Create the BLAST database 
 
