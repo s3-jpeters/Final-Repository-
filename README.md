@@ -64,9 +64,23 @@ Check you are in the write directory
 ## Download the query protein
 
 ```
+ncbi-acc-download -F fasta -m protein "NP_849193.1"
+```
+## Perform the BLAST search 
+
+```
+blastp -db ../allprotein.fas -query NP_849193.1.fa -outfmt 0 -max_hsps 1 -out STT3B.blastp.typical.out
+```
+## Perform a BLAST search, and request tabular output
+
+We will create an easier to analyse output. 
+This command will allow us to better interpret our BLAST search 
+
+```
+blastp -db ../allprotein.fas -query NP_849193.1.fa  -outfmt "6 sseqid pident length mismatch gapopen evalue bitscore pident stitle"  -max_hsps 1 -out STT3B.blastp.detail.out
+```
 
 
-NP_849193.1
 
 
 
