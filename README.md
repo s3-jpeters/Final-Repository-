@@ -93,7 +93,7 @@ grep -o -E "^[A-Z]\.[a-z]+" STT3B.blastp.detail.filtered.out  | sort | uniq -c
 ```
 The output for the above command should give you a table of 11 species and the number of paralogs found in each species. 
 
-#3.Lab04- Gene Family Sequence Alighnment 
+#3. Lab04- Gene Family Sequence Alighnment 
 
 
 
