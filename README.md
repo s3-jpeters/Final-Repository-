@@ -21,7 +21,7 @@ Next we will need to move to this new repository
 ```
 cd lab(insert lab)-$MYGIT
 ```
-this is the same first step for all labs 3-8
+This is the same first step for all labs 3-8
 
 At anytime to check what directory you are in use the pwd command 
 
@@ -32,7 +32,7 @@ pwd
 
 ## Create the BLAST database 
 
-first go to the lab 3 directory 
+First go to the lab 3 directory 
 
 ```
 cd ~/lab03-$MYGIT
