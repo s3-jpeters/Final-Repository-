@@ -16,22 +16,31 @@ Before each lab we would clone that labs repository
 git clone https://github.com/Bio312/lab(insert lab)-$MYGIT
 ```
 
-Next we would need to move to this new repository 
+Next we will need to move to this new repository 
 
 ```
-cd lab03-$MYGIT
+cd lab(insert lab)-$MYGIT
 ```
+this is the same first step for all labs 3-8
 
-## 2. Lab03:  Finding homologs with BLAST KEY
+At anytime to check what directory you are in use the pwd command 
+
+```
+pwd
+```
+# 2. Lab03:  Finding homologs with BLAST KEY
 
 To organize the BLAST searches, we will first create a directory for the STT3B search and navigate into it:
 
-We will create a folder for the STT3B BLAST search using mkdir command 
+We first created a folder for the STT3B BLAST search using mkdir command 
 
 ```
-mkdir ~/lab03-$MYGIT/globins
-
+mkdir ~/lab03-$MYGIT/STT3B
 ```
+Check you are in the write directory
+
+
+
 
 
 
