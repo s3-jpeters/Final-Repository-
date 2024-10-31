@@ -1,7 +1,7 @@
 # Tutorial for evolutionary gene history analysis of STT3B in BIO312 
   ### Contents  
   1. [Introduction](#1-introduction)
-  2. [Lab3](#2-lab3)
+  2. [Lab03](#2-lab03)
   4. [Lab04](#4-lab04) 
   5. Lab05
   6. Lab06
@@ -93,7 +93,7 @@ grep -o -E "^[A-Z]\.[a-z]+" STT3B.blastp.detail.filtered.out  | sort | uniq -c
 ```
 The output for the above command should give you a table of 11 species and the number of paralogs found in each species. 
 
-#3. Lab04- Gene Family Sequence Alighnment 
+# 3. Lab04- Gene Family Sequence Alighnment 
 
 
 
