@@ -24,9 +24,16 @@ cd lab03-$MYGIT
 
 ## 2. Lab03:  Finding homologs with BLAST KEY
 
-To organize the BLAST searches, we will first create a directory for the STT3B search and navigate into it.
+To organize the BLAST searches, we will first create a directory for the STT3B search and navigate into it:
 
-We will create a folder using mkdir for the STT3B BLAST search 
+We will create a folder for the STT3B BLAST search using mkdir command 
+
+```
+mkdir ~/lab03-$MYGIT/globins
+
+```
+
+
 
 
 
