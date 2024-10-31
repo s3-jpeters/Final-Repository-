@@ -59,7 +59,7 @@ We first created a folder for the STT3B BLAST search using mkdir command
 ```
 mkdir ~/lab03-$MYGIT/STT3B
 ```
-Check you are in the write directory
+Check you are in the right directory
 
 ## Download the query protein
 
