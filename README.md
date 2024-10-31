@@ -29,7 +29,9 @@ At anytime to check what directory you are in use the pwd command
 ```
 pwd
 ```
-# 2. Lab03:  Finding homologs with BLAST KEY
+# 2. BLAST
+
+##Lab03:  Finding homologs with BLAST KEY
 
 ## Create the BLAST database 
 
