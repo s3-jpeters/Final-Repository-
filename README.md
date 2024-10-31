@@ -2,7 +2,7 @@
   ### Contents  
   1. [Introduction](#1-introduction)
   2. [Lab3](#2-lab3)
-  4. Lab04 
+  4. [Lab04](#4-lab04) 
   5. Lab05
   6. Lab06
   7. Lab07
@@ -79,6 +79,22 @@ This command will allow us to better interpret our BLAST search
 ```
 blastp -db ../allprotein.fas -query NP_849193.1.fa  -outfmt "6 sseqid pident length mismatch gapopen evalue bitscore pident stitle"  -max_hsps 1 -out STT3B.blastp.detail.out
 ```
+Filtering the BLAST output for high scoring homologs 
+
+We only want high scoring matches so we used a e-value of 1e-30 for our gene STT3B
+
+```
+awk '{if ($6< 1e-30)print $1 }' Stt3B.blastp.detail.out > STT3B.blastp.detail.filtered.out
+```
+In order to actually count the usedul homologs in the BLAST we used this command 
+
+```
+grep -o -E "^[A-Z]\.[a-z]+" STT3B.blastp.detail.filtered.out  | sort | uniq -c
+```
+The output for the above command should give you a table of 11 species and the number of paralogs found in each species. 
+
+#3.Lab04- Gene Family Sequence Alighnment 
+
 
 
 
