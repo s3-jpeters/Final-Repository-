@@ -99,6 +99,56 @@ The output for the above command should give you a table of 11 species and the n
 # 3. Allighnment 
 ## Lab04: Gene family sequence alignment
 
+Clone lab 04 and use the cd command to move into this directory 
+
+Make sure the VS code extention used to visualize pdf's is downloaded 
+
+## Alighn STT3B gene family members 
+
+create a folder for the STT3B gene family in lab 04 using this command 
+
+```
+mkdir ~/lab04-$MYGIT/STT3B
+```
+go into this directory using the cd command 
+
+```
+cd ~/lab04-$MYGIT/STT3B
+```
+Obtain the sequence that were in the BLAST output file from lab03 using this code
+
+```
+seqkit grep --pattern-file ~/lab03-$MYGIT/STT3B/STT3B.blastp.detail.filtered.out ~/lab03-$MYGIT/allprotein.fas | seqkit grep -v -p "carpio" > ~/lab04-$MYGIT/STT3B/STT3B.homologs.fas
+```
+## Perform a global multiple sequence alignment in muscle:
+
+Use the following command to make a multiple sequence allighnment using muscle:
+
+```
+muscle -align ~/lab04-$MYGIT/STT3B/STT3B.homologs.fas -output ~/lab04-$MYGIT/STT3B/STT3B.homologs.al.fas
+```
+Now we are going to view this allighnment then convert it to a pdf so it is easier to analyze
+
+The following is the command used to view the allighnment: 
+
+```
+alv -kli  ~/lab04-$MYGIT/STT3B/STT3B.homologs.al.fas | less -RS
+```
+Use the majority option for easier viewing 
+
+```
+alv -kli --majority ~/lab04-$MYGIT/globins/globins.homologs.al.fas | less -RS
+```
+
+This command shows the alignment file with a majority consensus sequence, highlighting the most common residues at each position. The output is formatted for easy viewing and scrolling in the terminal.
+
+
+
+
+
+
+
+
 
 
 
