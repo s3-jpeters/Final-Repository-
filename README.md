@@ -142,6 +142,39 @@ alv -kli --majority ~/lab04-$MYGIT/globins/globins.homologs.al.fas | less -RS
 
 This command shows the alignment file with a majority consensus sequence, highlighting the most common residues at each position. The output is formatted for easy viewing and scrolling in the terminal.
 
+Next we will run an R-script code for printing the allighnment:
+
+```
+ Rscript --vanilla ~/lab04-$MYGIT/plotMSA.R  ~/lab04-$MYGIT/STT3B/STT3B.homologs.al.fas
+```
+
+## Get information about this allighnment 
+
+First we will caluclate the width of this allighnment using this command: 
+
+```
+alignbuddy  -al  ~/lab04-$MYGIT/STT3B/STT3B.homologs.al.fas
+```
+Now we will calculate the allghnment removing any of the columns that have gaps in them:
+
+```
+alignbuddy -trm all  ~/lab04-$MYGIT/STT3B/STT3B.homologs.al.fas | alignbuddy  -al
+```
+Next we will caluclate the length of the allighnment after removing completly conserved positions:
+
+```
+alignbuddy -dinv 'ambig' ~/lab04-$MYGIT/STT3B/STT3B.homologs.al.fas | alignbuddy  -al
+```
+## Caluclate average percent identity 
+First we are gonna calulate the average percent identity using t-coffee: 
+
+```
+t_coffee -other_pg seq_reformat -in ~/lab04-$MYGIT/STT3B/STT3B.homologs.al.fas -output sim
+```
+
+
+
+
 
 
 
