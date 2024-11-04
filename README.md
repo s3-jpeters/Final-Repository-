@@ -2,7 +2,7 @@
   ### Contents  
   1. [Introduction](#1-introduction)
   2. [BLAST](#2-BLAST)
-  4. [Lab04](#4-lab04) 
+  4. [Sequence Allighnment](#4-Sequence Allighnment) 
   5. Lab05
   6. Lab06
   7. Lab07
@@ -96,7 +96,7 @@ grep -o -E "^[A-Z]\.[a-z]+" STT3B.blastp.detail.filtered.out  | sort | uniq -c
 ```
 The output for the above command should give you a table of 11 species and the number of paralogs found in each species. 
 
-# 3. Lab04- Gene Family Sequence Alighnment 
+# 3. Sequence Allighnment 
 
 
 
