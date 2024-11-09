@@ -177,7 +177,7 @@ Here is how to calculate the percent identity using alighnbuddy:
  alignbuddy -pi ~/lab04-$MYGIT/STT3B/STT3B.homologs.al.fas | awk ' (NR>2)  { for (i=2;i<=NF  ;i++){ sum+=$i;num++} }
      END{ print(100*sum/num) } '
 ```
-#4. IQ-Tree
+# 4. IQ-Tree
 
 
 
