@@ -2,7 +2,7 @@
   ### Contents  
   1. [Introduction](#1-introduction)
   2. [BLAST](#2-BLAST)
-  4. [Allighnment](#4-Allighnment) 
+  4. [Allignment](#4-Alignment) 
   5. [IQ-Tree](#5-IQ-Tree) 
   6. Lab06
   7. Lab07
@@ -96,7 +96,7 @@ grep -o -E "^[A-Z]\.[a-z]+" STT3B.blastp.detail.filtered.out  | sort | uniq -c
 ```
 The output for the above command should give you a table of 11 species and the number of paralogs found in each species. 
 
-# 3. Allighnment 
+# 3. Alignment 
 ## Lab04: Gene family sequence alignment
 
 Clone lab 04 and use the cd command to move into this directory 
