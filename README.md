@@ -2,7 +2,7 @@
   ### Contents  
   1. [Introduction](#1-introduction)
   2. [BLAST](#2-BLAST)
-  4. [Allignment](#4-Alignment) 
+  4. [Alignment](#4-Alignment) 
   5. [IQ-Tree](#5-IQ-Tree) 
   6. Lab06
   7. Lab07
