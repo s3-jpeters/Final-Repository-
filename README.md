@@ -3,7 +3,7 @@
   1. [Introduction](#1-introduction)
   2. [BLAST](#2-BLAST)
   4. [Allighnment](#4-Allighnment) 
-  5. Lab05
+  5. [IQ-Tree](#5-IQ-Tree) 
   6. Lab06
   7. Lab07
   8. Lab08
@@ -171,8 +171,13 @@ First we are gonna calulate the average percent identity using t-coffee:
 ```
 t_coffee -other_pg seq_reformat -in ~/lab04-$MYGIT/STT3B/STT3B.homologs.al.fas -output sim
 ```
+Here is how to calculate the percent identity using alighnbuddy: 
 
-
+```
+ alignbuddy -pi ~/lab04-$MYGIT/STT3B/STT3B.homologs.al.fas | awk ' (NR>2)  { for (i=2;i<=NF  ;i++){ sum+=$i;num++} }
+     END{ print(100*sum/num) } '
+```
+#4. IQ-Tree
 
 
 
