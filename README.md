@@ -199,6 +199,17 @@ iqtree -s ~/lab05-$MYGIT/STT3B/STT3B.homologsf.al.fas -bb 1000 -nt 2
 ```
 The input file is specified with -s. IQ-TREE determines the best substitution model, builds the tree, and estimates branch lengths. The -bb 1000 flag performs 1,000 bootstrap replicates for branch support, while -nt 2 uses 2 CPU threads to speed up the process.
 
+## The Unrooted Tree
+
+These commands display the phylogenetic tree from the STT3B alignment, first using a basic text graphic and then with a cleaner, unrooted graphical representation:
+
+```
+nw_display ~/lab05-$MYGIT/STT3B/STT3B.homologsf.al.fas.treefile
+Rscript --vanilla ~/lab05-$MYGIT/plotUnrooted.R ~/lab05-$MYGIT/STT3B/STT3B.homologsf.al.fas.treefile ~/lab05-$MYGIT/STT3B/STT3B.homologsf.al.fas.treefile.pdf 0.4 15
+```
+The first command shows a quick text-based tree with nw_display, but it may look rooted incorrectly. The second command uses an R script to create a clearer, unrooted graphical tree, adjusting label size and length for readability, and saves it as a PDF.
+
+
 
 
 
