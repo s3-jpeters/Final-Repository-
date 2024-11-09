@@ -206,6 +206,7 @@ These commands display the phylogenetic tree from the STT3B alignment, first usi
 ```
 # Display the STT3B phylogenetic tree as an ASCII (text-based) graphic using Newick formatted tree file
 nw_display ~/lab05-$MYGIT/STT3B/STT3B.homologsf.al.fas.treefile
+
 # Use R script to generate an unrooted graphical version of the STT3B phylogenetic tree
 # --vanilla: Runs R without loading or saving the workspace (clean session)
 # Input: Newick formatted tree file (STT3B.homologsf.al.fas.treefile)
