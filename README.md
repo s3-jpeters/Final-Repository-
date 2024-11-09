@@ -204,7 +204,14 @@ The input file is specified with -s. IQ-TREE determines the best substitution mo
 These commands display the phylogenetic tree from the STT3B alignment, first using a basic text graphic and then with a cleaner, unrooted graphical representation:
 
 ```
+# Display the STT3B phylogenetic tree as an ASCII (text-based) graphic using Newick formatted tree file
 nw_display ~/lab05-$MYGIT/STT3B/STT3B.homologsf.al.fas.treefile
+# Use R script to generate an unrooted graphical version of the STT3B phylogenetic tree
+# --vanilla: Runs R without loading or saving the workspace (clean session)
+# Input: Newick formatted tree file (STT3B.homologsf.al.fas.treefile)
+# Output: PDF file of the tree (STT3B.homologsf.al.fas.treefile.pdf)
+# 0.4: Sets the text label size
+# 15: Limits label length to fit the visualization
 Rscript --vanilla ~/lab05-$MYGIT/plotUnrooted.R ~/lab05-$MYGIT/STT3B/STT3B.homologsf.al.fas.treefile ~/lab05-$MYGIT/STT3B/STT3B.homologsf.al.fas.treefile.pdf 0.4 15
 ```
 The first command shows a quick text-based tree with nw_display, but it may look rooted incorrectly. The second command uses an R script to create a clearer, unrooted graphical tree, adjusting label size and length for readability, and saves it as a PDF.
