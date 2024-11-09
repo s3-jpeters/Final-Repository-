@@ -178,6 +178,27 @@ Here is how to calculate the percent identity using alighnbuddy:
      END{ print(100*sum/num) } '
 ```
 # 4. IQ-Tree
+## Lab 5: Gene Family Phylogeny using IQ-TREE
+Constructing a Phylogenetic Tree for STT3B Homologs 
+Use the mkdir command to create a directory in lab 05 for STT3B go to that new directory using the cd command
+The commands for lab05 work off the alighnment we created in lab 04 
+
+This command standardizes labels and removes duplicate sequences from the STT3B alignment, saving the cleaned file to your lab05 directory:
+
+```
+sed 's/ /_/g'  ~/lab04-$MYGIT/STT3B/STT3B.homologs.al.fas | seqkit grep -v -r -p "dupelabel" >  ~/lab05-$MYGIT/STT3B/STT3B.homologsf.al.fas
+```
+This command processes the STT3B homologs file by first replacing any spaces with underscores in the sequence labels and then removing any sequences with the tag "dupelabel". The cleaned output is saved in your lab05 directory as STT3B.homologsf.al.fas.
+
+The following command runs IQ-TREE to estimate the maximum likelihood tree for the STT3B alignment, including bootstrap support:
+
+```
+iqtree -s ~/lab05-$MYGIT/STT3B/STT3B.homologsf.al.fas -bb 1000 -nt 2
+```
+The input file is specified with -s. IQ-TREE determines the best substitution model, builds the tree, and estimates branch lengths. The -bb 1000 flag performs 1,000 bootstrap replicates for branch support, while -nt 2 uses 2 CPU threads to speed up the process.
+
+
+
 
 
 
