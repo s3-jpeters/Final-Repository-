@@ -179,7 +179,7 @@ Here is how to calculate the percent identity using alighnbuddy:
 ```
 # 4. IQ-Tree
 ## Lab 5: Gene Family Phylogeny using IQ-TREE
-Constructing a Phylogenetic Tree for STT3B Homologs 
+### Constructing a Phylogenetic Tree for STT3B Homologs 
 
 Use the mkdir command to create a directory in lab 05 for STT3B go to that new directory using the cd command
 
