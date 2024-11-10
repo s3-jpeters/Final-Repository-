@@ -4,7 +4,7 @@
   2. [BLAST](#2-BLAST)
   4. [Alignment](#4-Alignment) 
   5. [IQ-Tree](#5-IQ-Tree) 
-  6. Lab06
+  6. [Reconciling](#6-Reconciling)
   7. Lab07
   8. Lab08
   9. [Conclusion](#9-Conclusion) 
@@ -244,6 +244,37 @@ convert ~/lab05-$MYGIT/STT3B/STT3B.homologsf.al.midCl.treefile.svg ~/lab05-$MYGI
 
   For the STT3B gene family, we first visualized the tree and rooted it using midpoint rooting, estimating the oldest divergence based on the longest branch. Then, we examined both a phylogram (branch lengths show substitution rates) and a cladogram (all branches are equal), which made the relationships clearer. Next, we refined the tree by rooting it with an outgroup, using a known distant relative for better accuracy. Finally, we checked bootstrap support values, with anything above 80% indicating strong confidence in the branching pattern. This approach helps provide a clear and reliable view of the evolutionary history of the STT3B gene family.
 
+#6. Reconciling
+## Lab 6. Reconciling a Gene and Species Tree
+
+The commands set up a Python 2.7 environment with ETE3 for phylogenetic analysis:
+
+```
+mamba create -n my_python27_env python=2.7
+conda activate my_python27_env
+mamba install -y ete3
+```
+The first command creates a new environment named my_python27_env with Python 2.7 using Mamba, a faster alternative to Conda. Then, we activate this environment with conda activate. Finally, ETE3, a toolkit for tree analysis and visualization, is installed. This setup only needs to be done once and prepares the environment for future phylogenetic work.
+
+Clone lab 6 and move into this new directory as you have done for each of the previous labs
+
+### Gene Tree-Species Tree Reconciliation
+The following commands create and visualize toy species and gene trees, followed by a manual reconciliation step: 
+
+```
+# Create the species tree
+echo "(frog,(horse,cat)Mammalia)Tetrapoda;" > toyspecies.tre
+
+# Create the gene tree
+echo "((frog_Alpha,(horse_Alpha,cat_Alpha)),(frog_Beta,horse_Beta));" > toygenetree.tre
+
+# Display the species tree
+nw_display ~/lab06-$MYGIT/toyspecies.tre
+
+# Display the gene tree
+nw_display ~/lab06-$MYGIT/toygenetree.tre
+```
+The first command creates a simple species tree with frog, horse, and cat, grouping horse and cat under "Mammalia" and labeling the overall clade as "Tetrapoda." The second command creates a gene tree showing relationships among alpha and beta copies in each species. The nw_display commands visualize each tree for verification. Finally, the manual reconciliation step involves comparing the gene and species trees to identify potential duplications and losses, helping understand gene family evolution. 
 
 
 
