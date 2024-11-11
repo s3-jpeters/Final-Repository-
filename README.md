@@ -55,9 +55,9 @@ Make the BLAST database using this command:
 ```
 makeblastdb -in allprotein.fas -dbtype prot
 ```
-To organize the BLAST searches, we will first create a directory for the STT3B search and navigate into it:
+To organize the BLAST searches, we will first create a directory for the STT3B search and navigate into it
 
-We first created a folder for the STT3B BLAST search using mkdir command 
+We first created a folder for the STT3B BLAST search using mkdir command:
 
 ```
 mkdir ~/lab03-$MYGIT/STT3B
