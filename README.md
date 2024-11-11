@@ -1,4 +1,4 @@
-# Tutorial for evolutionary gene history analysis of STT3B in BIO312 
+# Tutorial for Evolutionary Gene History Analysis of STT3B in BIO312 
   ### Contents  
   1. [Introduction](#1-introduction)
   2. [BLAST](#2-BLAST)
