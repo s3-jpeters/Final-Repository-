@@ -256,25 +256,87 @@ mamba install -y ete3
 ```
 The first command creates a new environment named my_python27_env with Python 2.7 using Mamba, a faster alternative to Conda. Then, we activate this environment with conda activate. Finally, ETE3, a toolkit for tree analysis and visualization, is installed. This setup only needs to be done once and prepares the environment for future phylogenetic work.
 
-Clone lab 6 and move into this new directory as you have done for each of the previous labs
+## Preparation and Setup for STT3B Gene Family Reconciliation
 
-### Gene Tree-Species Tree Reconciliation
-The following commands create and visualize toy species and gene trees, followed by a manual reconciliation step: 
+In this lab, we are setting up the analysis for the STT3B gene family by copying over the midpoint-rooted gene tree from Lab 5 and organizing our files in the Lab 6 directory. This step ensures we are using the correct gene tree for subsequent reconciliation and analysis tasks.
+
+The following code consolidates the entire process, including directory creation, file copying, pruning (if needed), and visualization:
 
 ```
-# Create the species tree
-echo "(frog,(horse,cat)Mammalia)Tetrapoda;" > toyspecies.tre
+# Step 1: Create a new directory for the STT3B gene family in Lab 6
+mkdir ~/lab06-$MYGIT/STT3B
 
-# Create the gene tree
-echo "((frog_Alpha,(horse_Alpha,cat_Alpha)),(frog_Beta,horse_Beta));" > toygenetree.tre
+# Step 2: Copy the midpoint-rooted gene tree from Lab 5 to the new Lab 6 directory
+cp ~/lab05-$MYGIT/STT3B/STT3B.homologs.al.mid.treefile ~/lab06-$MYGIT/STT3B/STT3B.homologs.al.mid.treefile
 
-# Display the species tree
-nw_display ~/lab06-$MYGIT/toyspecies.tre
+# Step 3: Verify that the gene tree file has been copied correctly
+ls ~/lab06-$MYGIT/STT3B/STT3B.homologs.al.mid.treefile
 
-# Display the gene tree
-nw_display ~/lab06-$MYGIT/toygenetree.tre
+# Step 4: (Optional) Prune unwanted sequences from the gene tree
+gotree prune -i ~/lab06-$MYGIT/STT3B/STT3B.homologs.al.mid.treefile \
+-o ~/lab06-$MYGIT/STT3B/STT3B.homologs.pruned.treefile \
+<sequence1> <sequence2> <sequence3>
+
+# Step 5: Display the pruned gene tree for verification (if pruning was performed)
+nw_display ~/lab06-$MYGIT/STT3B/STT3B.homologs.pruned.treefile
 ```
-The first command creates a simple species tree with frog, horse, and cat, grouping horse and cat under "Mammalia" and labeling the overall clade as "Tetrapoda." The second command creates a gene tree showing relationships among alpha and beta copies in each species. The nw_display commands visualize each tree for verification. Finally, the manual reconciliation step involves comparing the gene and species trees to identify potential duplications and losses, helping understand gene family evolution. 
+This setup process for the STT3B gene family involves creating a new directory in the Lab 6 folder and copying the midpoint-rooted gene tree from Lab 5 to maintain consistency in our analysis. After copying, we verify that the gene tree file was transferred correctly. If necessary, we prune unwanted sequences using the gotree prune command to focus on the ingroup sequences of interest. Finally, we use nw_display to visualize the pruned tree, confirming that the structure is correct before proceeding with reconciliation. This streamlined preparation ensures that our analysis is based on a clean and accurate gene tree, ready for evolutionary investigation. 
+
+# Reconcile the gene and species tree using Notung
+
+In this section, we perform reconciliation of the STT3B gene tree using Notung. This analysis allows us to compare the gene tree with the species tree, helping us detect key evolutionary events such as duplications and losses. Below is the full workflow, including all necessary commands.
+
+```
+# Step 1: Create a directory for STT3B in the Lab 6 folder
+mkdir ~/lab06-$MYGIT/STT3B
+
+# Step 2: Copy the midpoint-rooted gene tree from Lab 5 to Lab 6
+cp ~/lab05-$MYGIT/STT3B/STT3B.homologs.al.mid.treefile ~/lab06-$MYGIT/STT3B/STT3B.homologs.al.mid.treefile
+
+# Step 3: Verify the copied file
+ls ~/lab06-$MYGIT/STT3B/STT3B.homologs.al.mid.treefile
+
+# Step 4: (Optional) Prune unwanted sequences from the gene tree
+gotree prune -i ~/lab06-$MYGIT/STT3B/STT3B.homologs.al.mid.treefile \
+-o ~/lab06-$MYGIT/STT3B/STT3B.homologs.pruned.treefile \
+<sequence1> <sequence2> <sequence3>
+
+# Step 5: Display the pruned gene tree (if pruning was performed)
+nw_display ~/lab06-$MYGIT/STT3B/STT3B.homologs.pruned.treefile
+
+# Step 6: Perform reconciliation using Notung
+java -jar ~/tools/Notung-3.0_24-beta/Notung-3.0_24-beta.jar \
+-s ~/lab05-$MYGIT/species.tre \
+-g ~/lab06-$MYGIT/STT3B/STT3B.homologs.pruned.treefile \
+--reconcile --speciestag prefix --savepng --events \
+--outputdir ~/lab06-$MYGIT/STT3B/
+
+# Step 7: Examine the reconciliation results for duplications and losses
+less ~/lab06-$MYGIT/STT3B/STT3B.homologs.pruned.treefile.rec.events.txt
+
+# Step 8: Display internal node names assigned by Notung (if needed)
+grep NOTUNG-SPECIES-TREE ~/lab06-$MYGIT/STT3B/STT3B.homologs.pruned.treefile.rec.ntg | \
+sed -e "s/^\[&&NOTUNG-SPECIES-TREE//" -e "s/\]/;/" | nw_display -
+
+# Step 9: Generate RecPhyloXML object for detailed visualization
+python2.7 ~/tools/recPhyloXML/python/NOTUNGtoRecPhyloXML.py \
+-g ~/lab06-$MYGIT/STT3B/STT3B.homologs.pruned.treefile.rec.ntg \
+--include.species
+
+# Step 10: Create a reconciliation graphic using thirdkind
+thirdkind -Iie -D 40 -f ~/lab06-$MYGIT/STT3B/STT3B.homologs.pruned.treefile.rec.ntg.xml \
+-o ~/lab06-$MYGIT/STT3B/STT3B.homologs.pruned.treefile.rec.svg
+
+# Step 11: Convert the SVG file to a PDF for easy viewing
+convert -density 150 ~/lab06-$MYGIT/STT3B/STT3B.homologs.pruned.treefile.rec.svg \
+~/lab06-$MYGIT/STT3B/STT3B.homologs.pruned.treefile.rec.pdf
+```
+This workflow involves setting up the analysis for the STT3B gene family by creating a new directory, copying over the midpoint-rooted gene tree from Lab 5, and optionally pruning any unwanted sequences. We then perform reconciliation using Notung, comparing the gene tree against the species tree to identify evolutionary events such as duplications and losses. The process also includes verifying the results and checking internal node names. Finally, we generate a RecPhyloXML object and create a detailed visualization using thirdkind, followed by converting the graphic to PDF format for easy viewing. This streamlined approach provides a clear and thorough analysis of the STT3B gene family, allowing us to understand its evolutionary changes across different species.
+
+
+
+
+
 
 
 
