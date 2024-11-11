@@ -282,7 +282,7 @@ nw_display ~/lab06-$MYGIT/STT3B/STT3B.homologs.pruned.treefile
 ```
 This setup process for the STT3B gene family involves creating a new directory in the Lab 6 folder and copying the midpoint-rooted gene tree from Lab 5 to maintain consistency in our analysis. After copying, we verify that the gene tree file was transferred correctly. If necessary, we prune unwanted sequences using the gotree prune command to focus on the ingroup sequences of interest. Finally, we use nw_display to visualize the pruned tree, confirming that the structure is correct before proceeding with reconciliation. This streamlined preparation ensures that our analysis is based on a clean and accurate gene tree, ready for evolutionary investigation. 
 
-# Reconcile the gene and species tree using Notung
+## Reconcile the gene and species tree using Notung
 
 In this section, we perform reconciliation of the STT3B gene tree using Notung. This analysis allows us to compare the gene tree with the species tree, helping us detect key evolutionary events such as duplications and losses. Below is the full workflow, including all necessary commands.
 
