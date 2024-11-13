@@ -245,7 +245,7 @@ convert ~/lab05-$MYGIT/STT3B/STT3B.homologsf.al.midCl.treefile.svg ~/lab05-$MYGI
 
   For the STT3B gene family, we first visualized the tree and rooted it using midpoint rooting, estimating the oldest divergence based on the longest branch. Then, we examined both a phylogram (branch lengths show substitution rates) and a cladogram (all branches are equal), which made the relationships clearer. Next, we refined the tree by rooting it with an outgroup, using a known distant relative for better accuracy. Finally, we checked bootstrap support values, with anything above 80% indicating strong confidence in the branching pattern. This approach helps provide a clear and reliable view of the evolutionary history of the STT3B gene family.
 
-# 6. Reconciling
+# 5. Reconciling
 ## Lab 6. Reconciling a Gene and Species Tree
 
 The commands set up a Python 2.7 environment with ETE3 for phylogenetic analysis:
