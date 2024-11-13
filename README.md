@@ -334,6 +334,40 @@ convert -density 150 ~/lab06-$MYGIT/STT3B/STT3B.homologs.pruned.treefile.rec.svg
 This workflow involves setting up the analysis for the STT3B gene family by creating a new directory, copying over the midpoint-rooted gene tree from Lab 5, and optionally pruning any unwanted sequences. We then perform reconciliation using Notung, comparing the gene tree against the species tree to identify evolutionary events such as duplications and losses. The process also includes verifying the results and checking internal node names. Finally, we generate a RecPhyloXML object and create a detailed visualization using thirdkind, followed by converting the graphic to PDF format for easy viewing. This streamlined approach provides a clear and thorough analysis of the STT3B gene family, allowing us to understand its evolutionary changes across different species.
 
 # 6. Protein-Domain
+## Lab 8: Protein Domain Prediction
+
+Clone this lab and move into this new directory. 
+
+### Domain Identification 
+
+In this lab, we will use RPS-BLAST to identify Pfam domains within unaligned protein sequences from the STT3B gene family. Pfam is a database for protein family classification, allowing us to detect key functional domains. This analysis will help us understand the structural features of STT3B.
+
+The following commands will set up the necessary files, remove stop codons, and prepare the STT3B sequences for RPS-BLAST analysis using the Pfam database:
+
+```
+# Setting up the globin sequences directory
+mkdir ~/lab08-$MYGIT/globins && cd ~/lab08-$MYGIT/globins
+
+# Copy the raw, unaligned globin sequence and remove any stop codons (asterisks) using sed
+sed 's/*//' ~/lab04-$MYGIT/globins/globins.homologs.fas > ~/lab08-$MYGIT/globins/globins.homologs.fas
+
+# Note: The Pfam database required for RPS-BLAST analysis is pre-downloaded at ~/data/Pfam/
+# The Pfam models will be used to classify protein families and predict functional domains.
+```
+We processed the unaligned STT3B protein sequences by removing stop codons. Using RPS-BLAST and the Pfam database, we identified functional domains in STT3B. The findings will provide insights into the evolutionary and functional significance of these domains.
+
+### Running RPS-BLAST
+
+The following command runs RPS-BLAST on the unaligned STT3B sequences to identify Pfam domains, generating an output file for further analysis.
+
+```
+rpsblast -query ~/lab08-$MYGIT/STT3B/STT3B.homologs.fas -db ~/data/Pfam/Pfam -out ~/lab08-$MYGIT/STT3B/STT3B.rps-blast.out -outfmt "6 qseqid qlen qstart qend evalue stitle" -evalue 0.0000000001
+```
+Review the RPS-BLAST output file. It contains results from the bioinformatics analysis, identifying conserved domains in the STT3B gene family across various species based on sequence homology.
+
+#### E-value Discussion:
+The e-value threshold influences the sensitivity of domain detection. A stricter e-value (e.g., 0.0000000001) ensures higher confidence in detected domains, while a higher e-value (e.g., 0.1) allows weaker domain hits, broadening the range of detected proteins. Use the strict e-value for precise questions but adjust as needed for broader exploration of your specific gene family.
+
 
 
 
