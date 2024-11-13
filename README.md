@@ -5,10 +5,9 @@
   3. [Alignment](#3-Alignment) 
   4. [IQ-Tree](#4-IQ-Tree) 
   5. [Reconciling](#5-Reconciling)
-  6. Lab07
-  7. Lab08
-  8. [Conclusion](#8-Conclusion)
-  9. [Results](#9-Results)
+  6. [Protein-Domain](#6-Protein-Domain)
+  7. [Conclusion](#8-Conclusion)
+  8. [Results](#9-Results)
 # 1. Introduction
 This repository contains the analysis pipeline and results for studying the evolutionary history of the STT3B gene family. It includes all commands, scripts, and output files necessary to replicate the study, along with detailed documentation. The primary focus of this analysis is to explore the inheritance and conservation of STT3B gene copies across various vertebrate lineages, using multiple computational tools and methods such as BLASTP, sequence alignment, phylogenetic tree construction, and reconciliation analysis. By following the steps and information provided, users can reproduce the study’s findings and gain insights into the evolutionary dynamics of the STT3B gene family.
 
@@ -333,6 +332,8 @@ convert -density 150 ~/lab06-$MYGIT/STT3B/STT3B.homologs.pruned.treefile.rec.svg
 ~/lab06-$MYGIT/STT3B/STT3B.homologs.pruned.treefile.rec.pdf
 ```
 This workflow involves setting up the analysis for the STT3B gene family by creating a new directory, copying over the midpoint-rooted gene tree from Lab 5, and optionally pruning any unwanted sequences. We then perform reconciliation using Notung, comparing the gene tree against the species tree to identify evolutionary events such as duplications and losses. The process also includes verifying the results and checking internal node names. Finally, we generate a RecPhyloXML object and create a detailed visualization using thirdkind, followed by converting the graphic to PDF format for easy viewing. This streamlined approach provides a clear and thorough analysis of the STT3B gene family, allowing us to understand its evolutionary changes across different species.
+
+# 6. Protein-Domain
 
 
 
