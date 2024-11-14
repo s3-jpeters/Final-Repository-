@@ -122,31 +122,26 @@ seqkit grep --pattern-file ~/lab03-$MYGIT/STT3B/STT3B.blastp.detail.filtered.out
 ```
 ## Perform a global multiple sequence alignment in muscle:
 
-Use the following command to make a multiple sequence allighnment using muscle:
+The following commands will create a multiple sequence alignment (MSA) for the STT3B sequences using MUSCLE, view the alignment in the terminal, and generate a PDF for easier analysis.
 
 ```
+# Step 1: Create a Multiple Sequence Alignment (MSA) using MUSCLE
+# This command aligns the unaligned STT3B protein sequences to identify conserved regions.
 muscle -align ~/lab04-$MYGIT/STT3B/STT3B.homologs.fas -output ~/lab04-$MYGIT/STT3B/STT3B.homologs.al.fas
-```
-Now we are going to view this allighnment then convert it to a pdf so it is easier to analyze
 
-The following is the command used to view the allighnment: 
+# Step 2: View the MSA in the terminal
+# This command displays the alignment file in the terminal using 'alv' for easy scrolling.
+alv -kli ~/lab04-$MYGIT/STT3B/STT3B.homologs.al.fas | less -RS
 
-```
-alv -kli  ~/lab04-$MYGIT/STT3B/STT3B.homologs.al.fas | less -RS
-```
-Use the majority option for easier viewing 
+# Step 3: View the MSA with Majority Consensus Sequence
+# This command highlights the most common residues at each position for easier interpretation.
+alv -kli --majority ~/lab04-$MYGIT/STT3B/STT3B.homologs.al.fas | less -RS
 
+# Step 4: Generate a PDF of the MSA using an R script
+# This command uses an R script to create a visual PDF of the alignment for detailed analysis.
+Rscript --vanilla ~/lab04-$MYGIT/plotMSA.R ~/lab04-$MYGIT/STT3B/STT3B.homologs.al.fas
 ```
-alv -kli --majority ~/lab04-$MYGIT/globins/globins.homologs.al.fas | less -RS
-```
-
-This command shows the alignment file with a majority consensus sequence, highlighting the most common residues at each position. The output is formatted for easy viewing and scrolling in the terminal.
-
-Next we will run an R-script code for printing the allighnment:
-
-```
- Rscript --vanilla ~/lab04-$MYGIT/plotMSA.R  ~/lab04-$MYGIT/STT3B/STT3B.homologs.al.fas
-```
+The MUSCLE command aligns the STT3B sequences to identify conserved regions. The alv tool allows us to view the alignment in the terminal, with the --majority option showing the most common residues for easier interpretation. Finally, the R script generates a PDF of the alignment for more detailed analysis.
 
 ## Get information about this allighnment 
 
