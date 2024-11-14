@@ -161,17 +161,23 @@ Next we will caluclate the length of the allighnment after removing completly co
 alignbuddy -dinv 'ambig' ~/lab04-$MYGIT/STT3B/STT3B.homologs.al.fas | alignbuddy  -al
 ```
 ## Caluclate average percent identity 
-First we are gonna calulate the average percent identity using t-coffee: 
+
+The following steps outline the procedure for calculating the average percent identity of the aligned STT3B protein sequences. We will first utilize T-Coffee to determine sequence similarity, followed by AlignBuddy to compute the percent identity. These commands provide a quantitative measure of the similarity between the aligned sequences, offering insights into the conservation of the STT3B gene family.
+
+The following steps outline how to calculate the average percent identity using T-Coffee and AlignBuddy with explanations:
 
 ```
+# Step 1: Calculate Sequence Similarity using T-Coffee
+# This command uses T-Coffee to reformat the aligned sequences and compute similarity scores.
 t_coffee -other_pg seq_reformat -in ~/lab04-$MYGIT/STT3B/STT3B.homologs.al.fas -output sim
-```
-Here is how to calculate the percent identity using alighnbuddy: 
 
+# Step 2: Calculate Average Percent Identity using AlignBuddy
+# This command uses AlignBuddy to compute the percent identity of the aligned sequences.
+# It then uses an awk script to calculate the average percent identity across all pairwise comparisons.
+alignbuddy -pi ~/lab04-$MYGIT/STT3B/STT3B.homologs.al.fas | awk '(NR>2) { for (i=2; i<=NF; i++) { sum+=$i; num++ } } END { print(100*sum/num) }'
 ```
- alignbuddy -pi ~/lab04-$MYGIT/STT3B/STT3B.homologs.al.fas | awk ' (NR>2)  { for (i=2;i<=NF  ;i++){ sum+=$i;num++} }
-     END{ print(100*sum/num) } '
-```
+This workflow calculates the average percent identity of the aligned STT3B sequences, providing a metric to evaluate sequence conservation. T-Coffee generates initial similarity scores, while AlignBuddy and the accompanying awk script determine the overall percent identity. These results help assess the level of evolutionary conservation within the STT3B gene family.
+
 # 4. IQ-Tree
 ## Lab 5: Gene Family Phylogeny using IQ-TREE
 ### Constructing a Phylogenetic Tree for STT3B Homologs 
