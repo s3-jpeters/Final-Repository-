@@ -35,34 +35,34 @@ pwd
 
 ## Create the BLAST database 
 
-First go to the lab 3 directory 
+The following steps provide a structured approach for preparing and organizing proteomic data for a BLAST search focused on the STT3B gene family. We will navigate to the lab directory, decompress the protein files, consolidate them into a single file, create a BLAST database, and set up a dedicated directory for the STT3B analysis.
 
 ```
+# Step 1: Navigate to the Lab 3 Directory
+# This command changes the working directory to the Lab 3 folder.
 cd ~/lab03-$MYGIT
-```
-Next in order to uncompress the proteomes. Run the following command:
 
-```
+# Step 2: Decompress the Proteome Files
+# The gunzip command is used to uncompress all the .gz proteome files within the 'proteomes' folder.
 gunzip proteomes/*.gz
-```
-In order to put all the protein sequences into a single file use the cat command
 
-```
-cat  proteomes/*.faa > allprotein.fas
-```
-Make the BLAST database using this command: 
+# Step 3: Consolidate Protein Sequences into a Single File
+# The cat command merges all protein sequence files (.faa) into one file named 'allprotein.fas'.
+cat proteomes/*.faa > allprotein.fas
 
-```
+# Step 4: Create a BLAST Database
+# This command generates a BLAST database from the consolidated protein sequences file.
 makeblastdb -in allprotein.fas -dbtype prot
-```
-To organize the BLAST searches, we will first create a directory for the STT3B search and navigate into it
 
-We first created a folder for the STT3B BLAST search using mkdir command:
-
-```
+# Step 5: Set Up a Directory for STT3B BLAST Search
+# Here, we create a new directory for organizing the STT3B BLAST search results.
 mkdir ~/lab03-$MYGIT/STT3B
+
+# Step 6: Confirm You Are in the Correct Directory
+# Ensure that the current working directory is set for the STT3B analysis.
+pwd
 ```
-Check you are in the right directory
+This sequence of commands sets up the environment for analyzing the STT3B gene family using BLAST. We start by navigating to the relevant directory and decompressing proteomic data. The individual protein sequences are consolidated, and a BLAST database is created to enable efficient searching. Finally, a dedicated directory is prepared to organize the subsequent analysis of the STT3B protein family.
 
 ## Download the query protein
 
