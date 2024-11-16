@@ -369,6 +369,8 @@ Review the RPS-BLAST output file. It contains results from the bioinformatics an
 #### E-value Discussion:
 The e-value threshold influences the sensitivity of domain detection. A stricter e-value (e.g., 0.0000000001) ensures higher confidence in detected domains, while a higher e-value (e.g., 0.1) allows weaker domain hits, broadening the range of detected proteins. Use the strict e-value for precise questions but adjust as needed for broader exploration of your specific gene family.
 
+# 8. Results
+
 
 
 
