@@ -402,7 +402,7 @@ None of the analyzed species were found to have zero STT3B homologs in the filte
 
 For a comprehensive study, aim to work with a dataset containing between 20 and 85 total homologs, with each species contributing 2 to 15 copies. If the homolog counts fall outside these ranges, you may need to adjust the e-value threshold to capture an appropriate number of matches. Please consult your TA before making any adjustments to ensure consistency in your analysis.
 
-## Lab04
+## Lab04: Gene family sequence alignment
 
 The following table provides a summary of key metrics from the multiple sequence alignment and analysis of the STT3B gene family, highlighting sequence conservation and alignment characteristics.
 
