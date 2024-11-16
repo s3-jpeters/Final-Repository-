@@ -380,18 +380,19 @@ The BLAST analysis was conducted with an e-value filter set at 1e-30, targeting 
 
 The following table lists the number of STT3B homologs found for each species after filtering:
 
-Species	Homolog Count
-C. carcharias	2
-C. mydas	2
-D. rerio	2
-E. caballus	2
-F. catus	2
-G. aculeatus	3
-G. gallus	2
-H. sapiens	2
-S. salar	6
-S. townsendi	2
-X. laevis	4
+| Species      |   Count   |
+|--------------|-----------|
+| C.carcharias |    2       |
+| C.mydas      |     2      |
+| D.rerio      |     2       |
+| E.caballus   |      2     |
+| F.catus      |      2     |
+| G.aculeatus  |      3     |
+| G.gallus     |       2    |
+| H.sapiens    |      2     |
+| S.salar      |      6    |
+| S.townsendi  |       2    |
+| X.laevis     |      4     |
 
 ### Zero Homologs Check:
 
