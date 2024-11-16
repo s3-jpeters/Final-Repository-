@@ -370,6 +370,39 @@ The e-value threshold influences the sensitivity of domain detection. A stricter
 
 # 7. Results
 
+## Lab03: Finding homologs with BLAST KEY
+
+### BLAST Search Summary
+
+The BLAST analysis was conducted with an e-value filter set at 1e-30, targeting high-confidence homologs for the STT3B gene family. Below is a summary of the identified homologs across various species.
+
+### Homolog Counts per Species:
+
+The following table lists the number of STT3B homologs found for each species after filtering:
+
+Species	Homolog Count
+C. carcharias	2
+C. mydas	2
+D. rerio	2
+E. caballus	2
+F. catus	2
+G. aculeatus	3
+G. gallus	2
+H. sapiens	2
+S. salar	6
+S. townsendi	2
+X. laevis	4
+
+### Zero Homologs Check:
+
+None of the analyzed species were found to have zero STT3B homologs in the filtered BLAST output.
+
+### Notes for Analysis:
+
+For a comprehensive study, aim to work with a dataset containing between 20 and 85 total homologs, with each species contributing 2 to 15 copies. If the homolog counts fall outside these ranges, you may need to adjust the e-value threshold to capture an appropriate number of matches. Please consult your TA before making any adjustments to ensure consistency in your analysis.
+
+
+
 
 
 
