@@ -408,13 +408,15 @@ The following table provides a summary of key metrics from the multiple sequence
 
 #### Results Summary for STT3B Alignment
 
-Unaligned sequence file name and location:	STT3B.homologs.fas at ~/lab04-$MYGIT/STT3B
-Aligned sequence file name and location:	STT3B.homologs.al.fas at ~/lab04-$MYGIT/STT3B
-Length of the alignment:	927 columns
-Number of columns with gaps:	695 columns
-Number of invariant columns:	539 columns
-Average percent identity (T-Coffee):	76.69%
-Average percent identity (AlignBuddy):	71.24%
+| Metric                                         | Value                                   |
+|------------------------------------------------|-----------------------------------------|
+| **Unaligned sequence file name and location**  | `STT3B.homologs.fas` at `~/lab04-$MYGIT/STT3B` |
+| **Aligned sequence file name and location**    | `STT3B.homologs.al.fas` at `~/lab04-$MYGIT/STT3B` |
+| **Length of the alignment**                    | 927 columns                             |
+| **Number of columns with gaps**                | 695 columns                             |
+| **Number of invariant columns**                | 539 columns                             |
+| **Average percent identity (T-Coffee)**        | 76.69%                                  |
+| **Average percent identity (AlignBuddy)**      | 71.24%                                  |
 
 ### Summary
 The analysis shows high sequence conservation within the STT3B gene family, with substantial alignment length and percent identity, indicating strong evolutionary relationships among the homologs.
