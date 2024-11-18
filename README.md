@@ -436,6 +436,29 @@ The STT3 gene family analysis focused on constructing a midpoint-rooted phylogen
 
 The phylogenetic tree supports an ancient duplication event separating STT3A and STT3B subunits. High bootstrap values affirm the relationships in major clades, though low support in specific nodes suggests potential alignment or sequence data issues. Future work could refine these areas by incorporating more comprehensive data or alternative alignment methods.
 
+## Lab06: Reconciling a Gene and Species Tree
+
+The reconciliation of the STT3B gene family tree was performed using Notung, aligning the gene tree with the species tree based on the midpoint-rooted tree. The analysis aimed to identify duplication and loss events, providing insights into the evolutionary history of the STT3B gene family. Necessary pruning was applied to focus on relevant homologs.
+
+### Reconciliation Analysis Results for the STT3B Gene Family
+
+| **Parameter**                    | **Value/Description**                         |
+|----------------------------------|-----------------------------------------------|
+| Cost of Reconciled Tree          | 83.5                                          |
+| Common Ancestor Copies (Gnathostomes) | 7 copies                                    |
+| Events Leading to Tetrapods      | 2 duplications, 5 losses                      |
+| Visualization Files              | `.svg` and `.pdf` files included in the repository |
+
+The reconciliation analysis highlights significant duplication and loss events in the evolution of the STT3B gene family. These findings suggest complex evolutionary changes, especially during the transition from the common ancestor of Gnathostomes to Tetrapods.
+
+## Lab08: Protein Domain Prediction
+
+
+
+
+
+
+
 
 
 
