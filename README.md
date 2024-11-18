@@ -453,6 +453,25 @@ The reconciliation analysis highlights significant duplication and loss events i
 
 ## Lab08: Protein Domain Prediction
 
+The RPS-BLAST analysis of the STT3B gene family focused on detecting conserved domains across various species, specifically the glycosyltransferase domain (Pfam02516). This domain is crucial for the protein's role in N-linked glycosylation. The table below summarizes key findings from the analysis, highlighting domain presence, consistency, and potential functional variations.
+
+| **Parameter**                        | **Value/Description**                                          |
+|--------------------------------------|----------------------------------------------------------------|
+| Unaligned Sequence File              | STT3B.homologs.al.fas                                          |
+| Expected Domain                      | Glycosyltransferase (Pfam02516)                                |
+| Detected Domains                     | Glycosyltransferase (Pfam02516) found in all gene copies       |
+| E-value Adjustments                  | No changes needed; all domains detected as expected            |
+| Rooted Tree File for Phylogeny       | STT3B.mid.treefile.pdf                                         |
+| Domain Consistency                   | All genes contain one instance of the expected domain          |
+| Longest Pfam Domain Annotation       | Length: 492 amino acids across multiple species                |
+| Best E-value Domain                  | *Equus caballus* STT3A (glycosyltransferase domain)            |
+| Gene with Most Pfam Domains          | All genes have one glycosyltransferase domain                  |
+| Domain Variability Across Lineages   | Minor variations, indicating conserved function with adaptations|
+
+The RPS-BLAST analysis identified the glycosyltransferase domain (Pfam02516) in all gene copies, consistent with expectations. No additional domains were detected, suggesting a conserved function across lineages. Minor sequence variations may reflect adaptations, but overall domain conservation indicates the importance of N-linked glycosylation in diverse taxa. Differences in domain lengths and E-values highlight evolutionary processes such as subfunctionalization or pseudogenization in certain lineages.
+
+
+
 
 
 
