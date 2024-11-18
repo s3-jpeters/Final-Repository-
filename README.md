@@ -423,6 +423,22 @@ The analysis shows high sequence conservation within the STT3B gene family, with
 
 ## Lab05 Gene Family Phylogeny using IQ-TREE
 
+The STT3 gene family analysis focused on constructing a midpoint-rooted phylogenetic tree to understand the evolutionary history and divergence of the STT3A and STT3B subunits across various species. Using the best-fit model (Q.plant+I+R3) determined by BIC, we examined sequence alignments and evaluated the phylogenetic relationships with bootstrap support values. This analysis helped identify key divergence patterns and areas of low support, highlighting potential issues in certain taxa placements.
+
+```
+| **Parameter**                  | **Value/Description**                                         |
+|--------------------------------|---------------------------------------------------------------|
+| Best-fit Model                 | Q.plant+I+R3 (chosen based on BIC)                            |
+| Rate Multiplier                | R3 (gamma categories)                                         |
+| Frequencies                    | Empirical + invariant sites (I)                               |
+| Low Bootstrap Nodes            | *Equus caballus* STT3A (0.000002), *Felis catus* STT3A (0.000002), *Homo sapiens* STT3B and *Equus caballus* STT3B (0.00499), *Salmo salar* LOC123727364 (0.000002) |
+| Outgroup Selection             | No external evidence for outgroup selection                   |
+| General Phylogeny Assessment   | Clear STT3A/STT3B separation with some unresolved nodes       |
+```
+The phylogenetic tree supports an ancient duplication event separating STT3A and STT3B subunits. High bootstrap values affirm the relationships in major clades, though low support in specific nodes suggests potential alignment or sequence data issues. Future work could refine these areas by incorporating more comprehensive data or alternative alignment methods.
+
+
+
 
 
 
