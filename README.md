@@ -248,7 +248,7 @@ convert ~/lab05-$MYGIT/STT3B/STT3B.homologsf.al.midCl.treefile.svg ~/lab05-$MYGI
 # 5. Reconciling
 ## Lab 6. Reconciling a Gene and Species Tree
 
-The commands set up a Python 2.7 environment with ETE3 for phylogenetic analysis:
+These commands set up a Python 2.7 environment with ETE3 for phylogenetic analysis:
 
 ```
 mamba create -n my_python27_env python=2.7
